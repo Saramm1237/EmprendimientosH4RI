@@ -1,0 +1,57 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    ViewData["Title"] = "Agregar o Eliminar Integrante de Equipo";
+}
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Agregar o Eliminar Integrante de Equipo</title>
+</head>
+<body>
+    <h2>Agregar o Eliminar Integrante de Equipo</h2>
+    <form method="post" action="/Integrante/AgregarEliminarIntegrante">
+        <div>
+            <label for="codigoIdea">Código de la Idea de Negocio:</label>
+            <input type="text" id="codigoIdea" name="CodigoIdea" required>
+        </div>
+        <div>
+            <label for="identificacion">Identificación:</label>
+            <input type="text" id="identificacion" name="Identificacion" required>
+        </div>
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="Nombre" required>
+        </div>
+        <div>
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="Apellidos" required>
+        </div>
+        <div>
+            <label for="rol">Rol dentro del emprendimiento:</label>
+            <input type="text" id="rol" name="Rol" required>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="Email" required>
+        </div>
+        <div>
+            <label for="accion">Acción:</label>
+            <select id="accion" name="Accion" required>
+                <option value="agregar">Agregar</option>
+                <option value="eliminar">Eliminar</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+</body>
+</html>

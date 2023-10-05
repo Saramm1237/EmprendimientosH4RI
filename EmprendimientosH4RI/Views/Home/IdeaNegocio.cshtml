@@ -1,0 +1,109 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Idea de negocio";
+}
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Formulario para agregar Idea de Negocio</title>
+</head>
+<body>
+    <h2>Formulario para agregar Idea de Negocio</h2>
+    <form method="post" action="/IdeaNegocio/Agregar">
+        <div>
+            <label for="codigoIdea">Codigo de la idea de negocio:</label>
+            <input type="text" id="codigoIdea" name="codigoIdea" required>
+        </div>
+        <div>
+            <label for="nombreIdea">Nombre de la idea de negocio:</label>
+            <input type="text" id="nombreIdea" name="nombreIdea" required>
+        </div>
+        <div>
+            <label for="impacto">Impacto social o económico que genera:</label>
+            <input type="text" id="impacto" name="impacto" required>
+        </div>
+        <div>
+            <label for="departamentos">Departamentos beneficiados:</label>
+            <input type="text" id="departamentos" name="departamentos" required>
+        </div>
+        <div>
+            <label for="inversion">Valor de la inversión:</label>
+            <input type="number" id="inversion" name="inversion" required>
+        </div>
+        <div>
+            <label for="ingresos">Total de ingresos a generar en los primeros 3 años:</label>
+            <input type="number" id="ingresos" name="ingresos" required>
+        </div>
+        <div>
+            <label for="integrantes">Integrantes del equipo:</label>
+            <div id="integrantes">
+                <div>
+                    <label for="identificacion">Identificación:</label>
+                    <input type="text" id="identificacion" name="identificacion[]" required>
+                </div>
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre[]" required>
+                </div>
+                <div>
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" id="apellidos" name="apellidos[]" required>
+                </div>
+                <div>
+                    <label for="rol">Rol dentro del emprendimiento:</label>
+                    <input type="text" id="rol" name="rol[]" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email[]" required>
+                </div>
+            </div>
+            <button type="button" onclick="agregarIntegrante()">Agregar Integrante</button>
+        </div>
+        <div>
+            <label for="herramientas">Herramientas de la 4RI utilizadas:</label>
+            <input type="text" id="herramientas" name="herramientas" required>
+        </div>
+        <div>
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+
+    <script>
+          function agregarIntegrante() {
+            var integrantesDiv = document.getElementById("integrantes");
+            var nuevoIntegranteDiv = document.createElement("div");
+            nuevoIntegranteDiv.innerHTML =
+                <div>
+                    <label for="identificacion">Identificación:</label>
+                    <input type="text" id="identificacion" name="identificacion[]" required>
+                </div>
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre[]" required>
+                </div>
+                <div>
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" id="apellidos" name="apellidos[]" required>
+                </div>
+                <div>
+                    <label for="rol">Rol dentro del emprendimiento:</label>
+                    <input type="text" id="rol" name="rol[]" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email[]" required>
+                </div>
+            ;
+            integrantesDiv.appendChild(nuevoIntegranteDiv);
+        }
+    </script>
+</body>
+</html>
